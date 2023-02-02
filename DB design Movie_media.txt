@@ -1,0 +1,65 @@
+Design a DB IMDB 
+
+1. Movie should have multiple media (video or Image)
+2. Movie can belongs to multiple Genre
+3. Movie can have multiple reviews and Review can belongs to a user
+4. Artist can have multiple skills
+5. Artist can perform multiplr role in a single film
+
+
+TableName : Movie
+-------------------------------
+movieId int (PK)
+movieName varchar(50)
+movieRelease_Date varchar(10)
+genreId (FK)
+directorId (FK)
+
+TableName : Media
+--------------------------------
+mediaId int (PK)
+mediaType varchar(50)
+url varchar(100)
+movieId (FK)
+
+TableName: Reviews
+---------------------------------
+reviewId int (PK)
+movieId (FK)
+userId (FK)
+
+TableName: Users
+---------------------------------
+userId int (PK)
+name varchar(20)
+email varchar(25)
+mobileNumber varchar(15)
+
+TableName: Artists
+-------------------------------
+artistId int (PK)
+artistName varchar(20)
+artistEmail varchar(25)
+
+TableName: Directors
+----------------------------------
+directorId int (PK)
+directorName varchar(20)
+directorEmail varchar(25)
+
+TableName: Genre
+--------------------------------
+genreId int (PK)
+genreName varchar(50)
+
+TableName: Roles
+---------------------------------
+rokeId int (PK)
+roleName varchar(25)
+
+TableName: ArtistRoles
+--------------------------------
+artistRolesId int (PK)
+artistId (FK)
+roleId (FK)
+movieId (FK)
